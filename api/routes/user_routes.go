@@ -37,7 +37,7 @@ func (s UserRoutes) Setup() {
 		api.GET("/user", s.userController.GetUser)
 		api.GET("/user/:id", s.userController.GetOneUser)
 		api.POST("/user", s.userController.SaveUser)
-		api.POST("/user/:id", s.userController.UpdateUser)
+		api.PUT("/user/:id", s.userController.UpdateUser)
 		api.DELETE("/user/:id", s.userController.DeleteUser)
 	}
 }

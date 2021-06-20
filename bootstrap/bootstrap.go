@@ -36,6 +36,7 @@ func bootstrap(
 	logger infrastructure.Logger,
 	cliApp cli.Application,
 	database infrastructure.Database,
+	migrations infrastructure.Migrations,
 
 ) {
 
@@ -67,6 +68,7 @@ func bootstrap(
 			logger.Zap.Info("-------------------------------------")
 			logger.Zap.Info("------- clean-architecture trello 📺 -------")
 			logger.Zap.Info("-------------------------------------")
+			migrations.Migrate()
 
 			go func() {
 				middlewares.Setup()
